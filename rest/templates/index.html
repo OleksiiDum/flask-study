@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+</head>
+<body>
+    <ol>
+    {% for todo in todos %}
+        <li>
+            {{ todo.todo }}
+            {{ todo.desription }}
+        </li>
+    {% endfor %}
+    </ol>
+    <form action="/all_todos" method="get">
+        <input type="submit" value="Get All Todos">
+    </form>
+    <br>
+    <form action="/all_todos" method="post">
+        <label for="todo">Todo</label>
+        <input type="text" name="todo" id="todo">
+        <label for="description">Desription</label>
+        <input type="text" name="description" id="description">
+        <input type="submit" value="Send">
+    </form>
+    <br>
+    <form action="/manage_todos" method="get">
+        <label for="todo">Todo</label>
+        <input type="text" name="todo" id="todo">
+        <input type="submit" value="GetOneTodoById">
+    </form>
+    <br>
+    <form action="/manage_todos" method="delete">
+        <label for="description">Todo</label>
+        <input type="text" name="todo" id="todo">
+        <input type="submit" value="DeleteTodoById">
+    </form>
+</body>
+</html>
